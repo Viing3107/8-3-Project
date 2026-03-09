@@ -19,6 +19,20 @@ body {
     overflow: hidden;
 }
 
+.fa-heart {
+    position: absolute;
+}
+
+@keyframes drop {
+    0% {
+        top: -100vh;
+    }
+
+    100% {
+        top: 150vh;
+    }
+}
+
 .envelope {
     display: flex;
     justify-content: center;
@@ -91,7 +105,7 @@ body {
     font-family: "Suahbi Caligraphy";
     font-size: 40px;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 
 .envelope .letter p {
