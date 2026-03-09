@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff4d6d;
+    --bg-color: #fff0f3;
+    --envelope-width: 400px;
+    --envelope-height: 250px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.envelope {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: var(--envelope-width);
+    height: var(--envelope-height);
+    background-color: var(--primary-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    border-top: calc(var(--envelope-height) / 2) solid #ff758f;
+    border-right: calc(var(--envelope-width) / 2) solid transparent;
+    border-left: calc(var(--envelope-width) / 2) solid transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 3;
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border-top: calc(var(--envelope-height) / 2) solid transparent;
+    border-right: calc(var(--envelope-width) / 2) solid #ff8fa3;
+    border-bottom: calc(var(--envelope-height) / 2) solid #ff758f;
+    border-left: calc(var(--envelope-width) / 2) solid #ff8fa3;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 3;
+}
+
+.envelope-open::before {
+    content: "";
+    transform: rotateX(180deg);
+    transform-origin: top;
+    transition:
+        transform 0.5s ease-in-out,
+        z-index 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.envelope-close::before {
+    content: "";
+    transform: none;
+    transform-origin: top;
+    transition: all 0.5s 1.2s ease-in-out;
+    z-index: 3;
+}
+
+.envelope .letter {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    user-select: none;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.envelope .letter h2 {
+    font-family: "Suahbi Caligraphy";
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.envelope .letter p {
+    font-family: "Suahbi Caligraphy";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.envelope-open .letter {
+    animation: open 1s 0.7s forwards;
+}
+
+@keyframes open {
+    0% {
+    }
+
+    50% {
+        transform: translateY(-300px) rotate(30deg);
+    }
+
+    60% {
+        scale: 1;
+    }
+
+    100% {
+        transform: none;
+        scale: 2;
+        z-index: 4;
+    }
+}
+
+.envelope-close .letter {
+    animation: close 1s forwards;
+}
+
+@keyframes close {
+    0% {
+        transform: none;
+        scale: 2;
+        z-index: 4;
+    }
+
+    60% {
+        scale: 1;
+    }
+
+    50% {
+        transform: translateY(-300px) rotate(30deg);
+    }
+
+    100% {
+    }
+}
+
+.envelope:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 10px black;
+    transition: all 0.5s;
+}

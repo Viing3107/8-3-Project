@@ -1,0 +1,3 @@
+- Đầu tiên tạo element HTML với class là envelop-close (ban đầu bức thư ở trạng thái đóng)
+- Khi người dùng click vào envelope-close, HTML bắt được sự kiện onclick -> envelope-close chuyển thành envelope-open (bức thư ở trạng thái mở khi người dùng click vào bức thư đang đóng)
+- Khi người dùng click vào envelope-open, HTML bắt được sự kiện onclick -> envelope-open chuyển thành envelope-close (bức thư ở trạng thái đóng khi người dùng click vào bức thư đang mở)

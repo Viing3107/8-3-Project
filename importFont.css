@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Suahbi Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/Font_by_suahbi-Regular.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Suahbi Serif";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/Suaserif-Bold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Suahbi Capslock";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/Vividlyviethoa-Regular.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Suahbi Caligraphy";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/suahocbai1.otf) format(opentype);
+}
+
+@font-face {
+    font-family: Hogfish;
+    src: url(./fonts/DFVN\ HOGFISH.OTF) format(opentype);
+}
+
+@font-face {
+    font-family: HeadingNow-31;
+    src: url(./fonts/HeadingNow-31Thin.otf) format(opentype);
+}
+
+@font-face {
+    font-family: HeadingNow-33;
+    src: url(./fonts/HeadingNow-33Book.otf) format(opentype);
+}
+
+@font-face {
+    font-family: Pecita;
+    src: url(./fonts/Pecita.otf) format(opentype);
+}
