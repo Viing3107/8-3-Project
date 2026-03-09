@@ -13,7 +13,7 @@ const color = ["#e0425f", "#ea4362", "#ff4d6d", "#8e0b23", "#a61832"];
 
 for (let i = 0; i <= 40; i++) {
     let cloneHeart = heart.cloneNode();
-    const timeDrop = Randfloat(2, 5);
+    const timeDrop = Randfloat(5, 10);
     const scale = Randfloat(5, 10);
     cloneHeart.style.color = color[Randint(0, color.length - 1)];
     cloneHeart.style.left = Randint(0, window.innerWidth) + "px";
