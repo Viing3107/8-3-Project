@@ -169,24 +169,20 @@ body {
 /* Responsive cho mobile */
 @media (max-width: 600px) {
     :root {
-        --envelope-width: 300px;
-        --envelope-height: 200px;
-    }
-
-    .envelope {
-        top: -50px;
+        --envelope-width: 200px;
+        --envelope-height: 175px;
     }
 
     .envelope .letter h2 {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .envelope .letter p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .envelope .letter {
-        padding: 15px;
+        padding: 5px;
     }
 
     @keyframes open {
