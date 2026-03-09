@@ -25,11 +25,10 @@ body {
 
 @keyframes drop {
     0% {
-        top: -100vh;
     }
 
     100% {
-        top: 150vh;
+        top: 1000px;
     }
 }
 
