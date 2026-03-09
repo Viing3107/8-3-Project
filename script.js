@@ -17,7 +17,7 @@ for (let i = 0; i <= 40; i++) {
     const scale = Randfloat(5, 10);
     cloneHeart.style.color = color[Randint(0, color.length - 1)];
     cloneHeart.style.left = Randint(0, window.innerWidth) + "px";
-    cloneHeart.style.top = "-100px";
+    cloneHeart.style.top = Randint(-window.innerHeight, 0) + "px";
     cloneHeart.style.scale = scale;
     cloneHeart.style.animation = `drop ${timeDrop}s infinite`;
     body.appendChild(cloneHeart);
