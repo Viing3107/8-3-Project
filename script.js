@@ -9,17 +9,32 @@ function Randfloat(l, r) {
 const body = document.body;
 const heart = document.createElement("i");
 heart.className = "fa-solid fa-heart";
-const color = ["#e0425f", "#ea4362", "#ff4d6d", "#8e0b23", "#a61832"];
+const colors = ["#e0425f", "#ff8ca1", "#ff4d6d", "#8e0b23", "#a61832"];
 
-for (let i = 0; i <= 30; i++) {
+for (let i = 0; i <= 50; i++) {
     let cloneHeart = heart.cloneNode();
-    const timeDrop = Randfloat(5, 10);
-    const scale = Randfloat(5, 10);
-    cloneHeart.style.color = color[Randint(0, color.length - 1)];
-    cloneHeart.style.left = Randint(0, window.innerWidth) + "px";
-    cloneHeart.style.top = Randint(-window.innerHeight, 0) + "px";
-    cloneHeart.style.scale = scale;
-    cloneHeart.style.animation = `drop ${timeDrop}s infinite`;
+    const duration = Randfloat(5, 10);
+    const delay = Randfloat(1, 10);
+    let color = colors[Randint(0, colors.length - 1)];
+    cloneHeart.style.color = color;
+    cloneHeart.style.filter = `drop-shadow(0 0 2px ${color})`;
+    cloneHeart.style.left = Randfloat(0, window.innerWidth) + "px";
+    cloneHeart.style.top = Randfloat(0, window.innerHeight) + "px";
+    cloneHeart.style.scale = Randfloat(5, 10);
+    cloneHeart.style.animation = `fadeIn ${duration}s ${delay}s`;
+
+    cloneHeart.addEventListener("animationend", () => {
+        cloneHeart.style.animation = "none";
+        color = colors[Randint(0, colors.length - 1)];
+        cloneHeart.style.color = color;
+        cloneHeart.style.filter = `drop-shadow(0 0 2px ${color})`;
+        cloneHeart.style.left = Randfloat(0, window.innerWidth) + "px";
+        cloneHeart.style.top = Randfloat(0, window.innerHeight) + "px";
+        cloneHeart.style.scale = Randfloat(5, 10);
+        setTimeout(() => {
+            cloneHeart.style.animation = `fadeIn ${duration}s ${delay}s`;
+        }, 1000);
+    });
     body.appendChild(cloneHeart);
 }
 

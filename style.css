@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 :root {
@@ -21,14 +22,24 @@ body {
 
 .fa-heart {
     position: absolute;
+    opacity: 0;
 }
 
-@keyframes drop {
+@keyframes fadeIn {
     0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
     }
 
     100% {
-        top: 1000px;
+        opacity: 0;
     }
 }
 
@@ -91,7 +102,7 @@ body {
 
 .envelope .letter {
     position: absolute;
-    width: 90%;
+    width: 87%;
     height: 90%;
     background-color: white;
     user-select: none;
@@ -102,9 +113,9 @@ body {
 
 .envelope .letter h2 {
     font-family: "Suahbi Caligraphy";
-    font-size: 40px;
+    font-size: 38px;
     color: var(--primary-color);
-    margin: 10px auto;
+    margin-bottom: 10px;
 }
 
 .envelope .letter p {
@@ -112,6 +123,11 @@ body {
     font-size: 15px;
     line-height: 1.5;
     color: #444;
+}
+
+.envelope .letter .signature {
+    text-align: end;
+    font-family: "Suahbi Caligraphy";
 }
 
 .envelope-open .letter {
